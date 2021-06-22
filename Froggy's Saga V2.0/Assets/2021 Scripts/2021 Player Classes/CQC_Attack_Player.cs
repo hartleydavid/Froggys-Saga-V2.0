@@ -13,8 +13,8 @@ public class CQC_Attack_Player : Attack_Type_Player
 
 
 
-    /*Draws a circle for the hitbox
-    * private void OnDrawGizmosSelected()
+    //Draws a circle for the hitbox
+    /*private void OnDrawGizmosSelected()
    {
        Gizmos.DrawWireSphere(attackPoint.position, range);
    }*/
