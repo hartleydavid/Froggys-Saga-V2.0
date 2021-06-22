@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     private void UpdateGameGraphics(GameObject characterSelected)
     {
         FindObjectOfType<CameraFollow>().UpdatePlayer(characterSelected);
-        FindObjectOfType<UI>().CharacterChange(characterSelected);
+        FindObjectOfType<UI_Health_Bar>().CharacterChange(characterSelected);
     }
 
     //This method handles when the player gets a game over and gives them a gameover screen 
