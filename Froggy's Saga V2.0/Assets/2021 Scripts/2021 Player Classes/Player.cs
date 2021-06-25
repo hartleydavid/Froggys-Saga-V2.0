@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Animator animator;
-    public UI ui;
+    //public UI ui;
+    public GameManager gm;
 
     public Attack_Type_Player attackType;
 
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = fullHealth;
         lifes = 3;
-        UpdateAnimClipTimes();
+        UpdateAnimationClipTimes();
         attackType.FloatSetter(attackAnimationTimer);
         animator.SetBool("IsDead", false);//Change Bool value?
 
@@ -66,9 +67,8 @@ public class Player : MonoBehaviour
             //Go to cap health
             currentHealth = fullHealth;
         }
-        ui.UpdateInfo(currentHealth);
-        //ui.UpdateHealthUI(currentHealth, fullHealth);
-
+        gm.PlayerHealthUpdate(currentHealth);
+        //ui.UpdateInfo(currentHealth);    
     }
 
     /* Deals with case when the player gets hurt and loses health
@@ -81,9 +81,8 @@ public class Player : MonoBehaviour
         if (isInvincible) return; // if invincible don't get hurt! -- Exit case
         //Ternery statement that see's if the health after taking damage would be negative
         //If so, health is 0, if not take the damage like a champ
-        currentHealth = currentHealth - damage < 0 ? 0 : currentHealth - damage;
-        //ui.UpdateHealthUI(currentHealth, fullHealth);
-        ui.UpdateInfo(currentHealth);
+        currentHealth = currentHealth - damage < 0 ? 0 : currentHealth - damage;       
+        gm.PlayerHealthUpdate(currentHealth);
 
         if (currentHealth == 0)
         {
@@ -97,10 +96,10 @@ public class Player : MonoBehaviour
     }
 
     //Public method to encaplsates the Death() method
-    public void DeathLogic()
+    /*public void DeathLogic()
     {
         Death();
-    }
+    }*/
 
     /* The meathod death() is called when the player dies in some form of gameplay way
      * Either it being a falling off the map or loosing health?
@@ -110,9 +109,10 @@ public class Player : MonoBehaviour
     {
         //transition.Died(GameObject.Find("Player").GetComponent<PlayerInfo>(), FindObjectOfType<HUD_Interface>(), manage);
         lifes--; //take off a life
-        //ui.UpdateLifesUI(lifes); // Update UI
-        currentHealth = fullHealth; // full health
-        ui.UpdateInfo(currentHealth);
+        // full health
+        currentHealth = fullHealth; 
+        //Update the game 
+        gm.PlayerDeath(lifes, fullHealth);
         isInvincible = false;
         //if Its a game over
         if (lifes < 0)
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
         animator.SetBool("IsHurt", isInvincible); // End animation
     }
 
-    public void UpdateAnimClipTimes()
+    public void UpdateAnimationClipTimes()
     {
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips)

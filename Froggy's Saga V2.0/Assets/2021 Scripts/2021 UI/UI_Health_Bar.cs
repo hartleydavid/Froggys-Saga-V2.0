@@ -30,11 +30,8 @@ public class UI_Health_Bar : UI
     {
         healthRatio = updatedHealth / fullHealth;
         currentHealth = updatedHealth;
-
         healthBar.localScale = new Vector2(healthRatio, 1f);
-       // healthNumbers.GetComponent<RectTransform>().localScale = new Vector2(1f, 1f);
         textbox.text = currentHealth + "/" + fullHealth;
-        
     }
 
     //Sets the Activeness of the components

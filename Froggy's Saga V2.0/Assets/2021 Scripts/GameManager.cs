@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     //Componets needed
     private GameObject player;
+    private UI_Health_Bar healthBar;
+    private UI_Life_Counter lifeCounter;
 
     //private List<GameObject> characters = new List<GameObject>();
     //public GameObject Player_Knight;
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
         //transition = GameObject.Find("Level Transition").GetComponent<LevelTransition>();
         //player = SetPlayer(FindObjectOfType<CharacterSettings>().GetPlayer());
         player = FindObjectOfType<Player>().gameObject;
+        healthBar = FindObjectOfType<UI_Health_Bar>();
+        lifeCounter = FindObjectOfType<UI_Life_Counter>();
         UpdateGameGraphics(player);
     }
 
@@ -56,7 +60,8 @@ public class GameManager : MonoBehaviour
     private void UpdateGameGraphics(GameObject characterSelected)
     {
         FindObjectOfType<CameraFollow>().UpdatePlayer(characterSelected);
-        FindObjectOfType<UI_Health_Bar>().CharacterChange(characterSelected);
+        healthBar.CharacterChange(characterSelected);
+        lifeCounter.CharacterChange(characterSelected);
     }
 
     //This method handles when the player gets a game over and gives them a gameover screen 
@@ -93,7 +98,22 @@ public class GameManager : MonoBehaviour
         return player;
     }
 
+    /* Method updates the UI whenever the player has a change in their health bar. 
+     * Either taking damage or healing
+     */
+    public void PlayerHealthUpdate(float newHealthCount)
+    {
+        healthBar.UpdateInfo(newHealthCount);
+    }
 
+    /* Method for when the player dies in the game
+     * Will update the UI with the new lifes left and health of the player
+     */
+    public void PlayerDeath(int lifesLeft, float fullHealth)
+    {
+        lifeCounter.UpdateInfo(lifesLeft);
+        PlayerHealthUpdate(fullHealth);
+    }
 
    /* private void FillList(List<GameObject> characters)
     {

@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 5228653}
   - component: {fileID: 5228655}
   - component: {fileID: 5228654}
+  - component: {fileID: 5228656}
   m_Layer: 5
-  m_Name: Life Counter
+  m_Name: 'Life Counter '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,9 +156,9 @@ RectTransform:
   m_Father: {fileID: 1475189382}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.9, y: 0.00024939}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 243.9, y: -63.999752}
   m_SizeDelta: {x: 167.71, y: 82.3806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5228654
@@ -173,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -182,12 +183,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 68
+    m_FontSize: 62
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 68
-    m_Alignment: 3
+    m_MaxSize: 128
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -202,6 +203,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5228652}
   m_CullTransparentMesh: 1
+--- !u!114 &5228656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &213715753
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,10 +280,10 @@ RectTransform:
   m_Father: {fileID: 1475189382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.808, y: 0.00024605}
-  m_SizeDelta: {x: 131.804, y: 127.64}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 72.1, y: -30.3}
+  m_SizeDelta: {x: 159.46, y: 127.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317478905
 MonoBehaviour:
@@ -289,9 +305,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a1b9fbc687964794e8fa730ecd0b3030, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -540,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 416938990}
-  ui: {fileID: 1757442736}
+  gm: {fileID: 1089865656}
   attackType: {fileID: 416938989}
   fullHealth: 120
   lifes: 3
@@ -1970,7 +1986,7 @@ GameObject:
   - component: {fileID: 1475189384}
   - component: {fileID: 1475189383}
   m_Layer: 5
-  m_Name: Life Counter
+  m_Name: Lifes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,6 +2025,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccf55c09c24a7945b1d97d8c7d74ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeCounter: {fileID: 5228654}
+  lifeImageObject: {fileID: 317478903}
+  counterTransform: {fileID: 5228653}
+  sprites:
+  - {fileID: 21300000, guid: 0931903f51c512b479a85d5fc4545cfd, type: 3}
+  - {fileID: 21300000, guid: 9878b6f1290ef41e88b30f08f68537fd, type: 3}
+  - {fileID: 21300032, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+  - {fileID: 21300032, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
+  - {fileID: 21300000, guid: 01c74af445a534c5b8bf530fc3d0de1b, type: 3}
 --- !u!114 &1475189384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,7 +2047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.4745098}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
