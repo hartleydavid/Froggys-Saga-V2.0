@@ -159,13 +159,13 @@ public class Player : MonoBehaviour
         {
             switch (clip.name)
             {
-                case "Player_Knight_Swing"://case "Attack":
+                case "Attack"://case "Attack":
                     attackAnimationTimer = clip.length;
                     break;
-                case "Player_Knight_Hit"://case "Hit":
+                case "Hit"://case "Hit":
                     tookDamageAnimationTimer = clip.length;
                     break;
-                case "Player_Knight_Death"://case "Death":
+                case "Death"://case "Death":
                     deathAnimationTimer = clip.length;
                     break;
             }

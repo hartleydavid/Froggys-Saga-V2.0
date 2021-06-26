@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour
 
     private Player_Movement movement;
     public Attack_Type_Player attackType;
-
+    public PauseScreen pauseScreen;
 
 
     // Start is called before the first frame update
@@ -117,7 +117,7 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //FindObjectOfType<PauseScreen>().Pause();
+            pauseScreen.Pause();
             isPaused = !isPaused;
         }
     }
