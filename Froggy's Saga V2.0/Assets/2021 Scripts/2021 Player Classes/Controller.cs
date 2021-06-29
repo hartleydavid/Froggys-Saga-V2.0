@@ -2,9 +2,9 @@
 
 public class Controller : MonoBehaviour
 {
-    bool isPaused;
-    bool canClimb;
-    bool canDrop;
+    private bool isPaused;
+    private bool canClimb;
+    private bool canDrop;
 
     private Player_Movement movement;
     public Attack_Type_Player attackType;
@@ -130,5 +130,10 @@ public class Controller : MonoBehaviour
     public bool GetCanDrop()
     {
         return canDrop;
+    }
+
+    public void SetIsPaused(bool isPaused)
+    {
+        this.isPaused = isPaused;
     }
 }

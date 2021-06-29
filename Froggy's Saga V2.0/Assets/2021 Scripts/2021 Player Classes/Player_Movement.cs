@@ -36,19 +36,6 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    /* Setter that changes the characters Movement constant to make them either faster or slower!
-     * @param hf: Value for the Current character being used 
-     */
-   /* public void SetHorizontalForce(float hf)
-    {
-        HORIZONTALFORCE = hf;
-        characterWalkingSpeed = hf;
-    }
-
-    public void SetSprintSpeed(float sprintSpeed)
-    {
-        this.sprintSpeed = sprintSpeed;
-    }*/
 
     public void Jumping(bool jumped)
     {
@@ -155,23 +142,3 @@ public class Player_Movement : MonoBehaviour
 
 
 }
-
-
-
-
-/*//Sprinting
-if (Input.GetKey(KeyCode.LeftShift))
-{
-    HORIZONTALFORCE = 6f;
-    animator.SetBool("Sprinting", true);
-}/* else if (Input.GetKey(KeyCode.LeftControl)) Crouching?
-{
-    HORIZONTALFORCE = 2.5f;
-    //animator.SetBool("Crouching", true);
-}
-else
-{
-   HORIZONTALFORCE = 4f;
-   animator.SetBool("Sprinting", false);
-
-}*/
