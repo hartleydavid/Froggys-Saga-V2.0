@@ -5,7 +5,7 @@ using UnityEngine;
 public class PS_Menu_Settings : PauseScreen_Menus
 {
     private GameSettings GS;
-    private AudioSource music;
+    public AudioSource music;
 
     private void Start()
     {
@@ -35,7 +35,6 @@ public class PS_Menu_Settings : PauseScreen_Menus
 
     public void AdjustBrightness(float newValue)
     {
-        //brightness.color = new Color(brightness.color.r, brightness.color.g, brightness.color.b, newValue / 10);
-        GS.SetBrightness(newValue / 10);
+        GS.SetBrightness(newValue);
     }
 }

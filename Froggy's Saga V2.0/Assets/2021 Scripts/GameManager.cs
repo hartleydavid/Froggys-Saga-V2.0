@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -8,13 +10,8 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     private UI_Health_Bar healthBar;
     private UI_Life_Counter lifeCounter;
-
-    //private List<GameObject> characters = new List<GameObject>();
-    //public GameObject Player_Knight;
-    //public GameObject Sr_Fox;
-    //public GameObject Light_Bandit;
-    //public GameObject Heavy_Bandit;
-    //public GameObject Future_Soldier;
+    //private GameSettings GS;
+    public Image brightnessImage;
 
     private Vector3 spawnPoint;
     //private LevelTransition transition;
@@ -29,33 +26,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //FillList(characters);
-
         //Start of Level -- Always at origin
         spawnPoint = new Vector3(0, 0, 0); //default point
         //transition = GameObject.Find("Level Transition").GetComponent<LevelTransition>();
-        //player = SetPlayer(FindObjectOfType<CharacterSettings>().GetPlayer());
         player = FindObjectOfType<Player>().gameObject;
         healthBar = FindObjectOfType<UI_Health_Bar>();
         lifeCounter = FindObjectOfType<UI_Life_Counter>();
+        FindObjectOfType<GameSettings>().SetBrightnessImage(brightnessImage);
         UpdateGameGraphics(player);
     }
-
-    /*private GameObject SetPlayer(GameObject player)
-    {
-        GameObject playerSelected = new GameObject();
-
-        foreach (GameObject character in characters)
-        {
-            character.SetActive(false);
-            if (character.name.Equals(player.name))
-            {
-                playerSelected = character;
-                character.SetActive(true);
-            }
-        }
-        return playerSelected;
-    }*/
 
     private void UpdateGameGraphics(GameObject characterSelected)
     {
@@ -114,13 +93,4 @@ public class GameManager : MonoBehaviour
         lifeCounter.UpdateInfo(lifesLeft);
         PlayerHealthUpdate(fullHealth);
     }
-
-   /* private void FillList(List<GameObject> characters)
-    {
-        characters.Add(Player_Knight);
-        characters.Add(Sr_Fox);
-        characters.Add(Light_Bandit);
-        characters.Add(Heavy_Bandit);
-        characters.Add(Future_Soldier);
-    }*/
 }

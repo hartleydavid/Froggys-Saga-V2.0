@@ -56,7 +56,9 @@ public class Player : MonoBehaviour
      */
     public void Heal(int health)
     {
-        //If the healing doesn't go over full
+
+        currentHealth = currentHealth + health <= fullHealth ? currentHealth + health : fullHealth;
+        /*//If the healing doesn't go over full
         if (currentHealth + health <= fullHealth)
         {
             //add the total amount of health
@@ -66,9 +68,8 @@ public class Player : MonoBehaviour
         {
             //Go to cap health
             currentHealth = fullHealth;
-        }
+        }*/
         gm.PlayerHealthUpdate(currentHealth);
-        //ui.UpdateInfo(currentHealth);    
     }
 
     /* Deals with case when the player gets hurt and loses health

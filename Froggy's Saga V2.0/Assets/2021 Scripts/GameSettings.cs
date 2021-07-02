@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
-    private float brightness;
+    public float brightness;
     private float volume;
 
     public Image brightnessLayer;
@@ -13,7 +13,7 @@ public class GameSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         brightness = 1f;
         volume = 1f;
         ///Read System save file to set these values based on a save file!
@@ -36,6 +36,12 @@ public class GameSettings : MonoBehaviour
         brightness = newValue;
         brightnessLayer.color = new Color(brightnessLayer.color.r, brightnessLayer.color.g, brightnessLayer.color.b, brightness / 10);
 
+    }
+
+    public void SetBrightnessImage(Image brightnessLayer)
+    {
+        this.brightnessLayer = brightnessLayer;
+        SetBrightness(brightness);
     }
 
 }
