@@ -30,10 +30,14 @@ public class GameManager : MonoBehaviour
         spawnPoint = new Vector3(0, 0, 0); //default point
         //transition = GameObject.Find("Level Transition").GetComponent<LevelTransition>();
         player = FindObjectOfType<Player>().gameObject;
+
         healthBar = FindObjectOfType<UI_Health_Bar>();
         lifeCounter = FindObjectOfType<UI_Life_Counter>();
-        FindObjectOfType<GameSettings>().SetBrightnessImage(brightnessImage);
         UpdateGameGraphics(player);
+
+        GameSettings tempGS = FindObjectOfType<GameSettings>();
+        tempGS.SetBrightnessImage(brightnessImage);
+        tempGS.SetNameOfCharacter(player.name);
     }
 
     private void UpdateGameGraphics(GameObject characterSelected)

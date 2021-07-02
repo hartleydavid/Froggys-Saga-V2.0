@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CQC_Attack_Player : Attack_Type_Player
 {
+    private string attackName = "Close Quarters";
     public float range;
     public float damageFrame;//Is the attack speed, the frame of damage is the speed in which the player attacks
 
@@ -65,4 +66,8 @@ public class CQC_Attack_Player : Attack_Type_Player
         animator.SetBool("Swing", didAttack);
     }
 
+    public override string getAttackName()
+    {
+        return attackName;
+    }
 }

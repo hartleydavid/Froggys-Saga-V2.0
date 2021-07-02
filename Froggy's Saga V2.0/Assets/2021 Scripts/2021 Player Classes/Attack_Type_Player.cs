@@ -19,6 +19,7 @@ public abstract class Attack_Type_Player : MonoBehaviour
     public abstract IEnumerator AttackAnimation();
     //Special case method
     public abstract void FloatSetter(float value);
+    public abstract string getAttackName();
 
     //Method calculates the damage output on attack
     //TODO: Damage multiplier (power-up)? 

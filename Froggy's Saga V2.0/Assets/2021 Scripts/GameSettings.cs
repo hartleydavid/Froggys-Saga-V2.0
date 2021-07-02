@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
+    private string nameOfCharacter;
     public float brightness;
     private float volume;
 
@@ -13,7 +14,7 @@ public class GameSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
         brightness = 1f;
         volume = 1f;
         ///Read System save file to set these values based on a save file!
@@ -44,5 +45,11 @@ public class GameSettings : MonoBehaviour
         SetBrightness(brightness);
     }
 
+    public void SetNameOfCharacter(string nameOfNewCharacter)
+    {
+        nameOfCharacter = nameOfNewCharacter;
+    }
+
+    public string GetNameOfCharacter() { return nameOfCharacter; }
 }
 
