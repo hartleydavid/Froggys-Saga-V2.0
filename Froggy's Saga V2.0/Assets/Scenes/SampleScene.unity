@@ -486,8 +486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -379.83612, y: -251.62648}
-  m_SizeDelta: {x: 655.0491, y: 503.2532}
+  m_AnchoredPosition: {x: -379.83612, y: -283.5132}
+  m_SizeDelta: {x: 655.0491, y: 439.4797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172528753
 MonoBehaviour:
@@ -522,16 +522,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health:
+  m_Text: 'Health:--------
 
 
-    Walk Speed:
+    Walk Speed:-----------
 
 
-    Sprint Multiplier:
+    Sprint Multiplier:-------
 
 
-    Jump Height:
+    Jump
+    Height:--------
 
 '
 --- !u!222 &172528754
@@ -2134,7 +2135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 840188783}
   paused: {fileID: 1960985935}
-  playerImage: {fileID: 0}
+  playerImageTransform: {fileID: 1196023924}
+  chararcterAnimator: {fileID: 1196023927}
   characterNameField: {fileID: 1270227724}
   damageField: {fileID: 2140101405}
   generalField: {fileID: 172528753}
@@ -2966,10 +2968,10 @@ RectTransform:
   m_Father: {fileID: 840188780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000053406, y: 258}
-  m_SizeDelta: {x: 254.5465, y: 231.7765}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000061035156, y: 258}
+  m_SizeDelta: {x: -1205.4535, y: -806.2235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196023925
 MonoBehaviour:
@@ -3021,7 +3023,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5c7801d211abac0418a12c608abc5a87, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4225,7 +4227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.0289, y: 57}
+  m_AnchoredPosition: {x: -3.0289, y: 0.0000038146973}
   m_SizeDelta: {x: 594.8915, y: 88.101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270227724
@@ -6047,8 +6049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 334.75275, y: -251.62648}
-  m_SizeDelta: {x: 740.0429, y: 503.2532}
+  m_AnchoredPosition: {x: 334.75275, y: -283.5132}
+  m_SizeDelta: {x: 740.0429, y: 439.4797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140101405
 MonoBehaviour:
@@ -6083,17 +6085,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Attack Type: Close Quarters
+  m_Text: 'Attack Type: -------------
 
 
-    Damage:
+    Damage: -------
 
 
-    Critical Chance:
+    Critical Chance:-------
 
 
     Critical
-    Multiplier: '
+    Multiplier: ------'
 --- !u!222 &2140101406
 CanvasRenderer:
   m_ObjectHideFlags: 0
