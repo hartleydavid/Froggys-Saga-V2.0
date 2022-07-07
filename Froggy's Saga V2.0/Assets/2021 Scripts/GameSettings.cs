@@ -11,6 +11,7 @@ public class GameSettings : MonoBehaviour
 
     public Image brightnessLayer;
 
+
     // Start is called before the first frame update
     void Start()
     {

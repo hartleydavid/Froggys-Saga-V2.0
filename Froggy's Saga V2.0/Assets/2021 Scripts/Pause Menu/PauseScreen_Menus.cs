@@ -7,6 +7,7 @@ public class PauseScreen_Menus : MonoBehaviour
    // public RectTransform rectTransform;
     public Animator animator;
     public PauseScreen paused;
+
     private bool isOpen;
 
 
@@ -31,7 +32,7 @@ public class PauseScreen_Menus : MonoBehaviour
     }
 
 
-    private void MenuEvent(string triggerKey, bool booleanKey)
+    public void MenuEvent(string triggerKey, bool booleanKey)
     {
         animator.SetTrigger(triggerKey);
         animator.SetBool("IsOpen", booleanKey);

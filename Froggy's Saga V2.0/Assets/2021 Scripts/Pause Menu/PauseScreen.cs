@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PauseScreen : MonoBehaviour
 {
     public Image pauseScreenImage;
-    
+
     private readonly float PAUSED_ALPHA = 0.65f;
     private bool isPaused;
     
@@ -13,7 +13,6 @@ public class PauseScreen : MonoBehaviour
     void Start()
     {
         isPaused = false;
-        //pauseScreenImage.
         ChangeAplhaValue(0);
         gameObject.SetActive(false);
 
@@ -57,7 +56,7 @@ public class PauseScreen : MonoBehaviour
     private void Resume()
     {
         isPaused = false;
-        //CloseAllTabs();
+        CloseAllTabs();
         Time.timeScale = 1;
         ChangeAplhaValue(0);
         gameObject.SetActive(isPaused);
@@ -69,5 +68,11 @@ public class PauseScreen : MonoBehaviour
         Resume();
         //Give functionality back to the controller
         FindObjectOfType<Controller>().SetIsPaused(isPaused);
+    }
+
+    //Closes the Settings menue screen currently
+    private void CloseAllTabs()
+    {
+        //FindObjectOfType<PS_Menu_Settings>().MenuEvent("Close", false);
     }
 }
